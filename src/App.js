@@ -71,15 +71,15 @@ const App = () => {
     // 3. Go across each diagonal to see if 
     //    all three squares have the same value.
     let [line, col] = idToCoords(id);
-    if ((squares[line][0].value === squares[line][1].value) && (squares[line][0].value === squares[line][2].value)){
+    if ((squares[line][0].value === squares[line][1].value) && (squares[line][0].value === squares[line][2].value)) {
       setWinner(squares[line][0].value);
-    } else if ((squares[0][col].value === squares[1][col].value) && (squares[0][col].value === squares[2][col].value)){
-      setWinner(squares[0][col].value );
-    } else if ((squares[0][0].value === squares[1][1].value) && (squares[0][0].value === squares[1][1].value) && (squares[0][0].value !== '')){
+    } else if ((squares[0][col].value === squares[1][col].value) && (squares[0][col].value === squares[2][col].value)) {
+      setWinner(squares[0][col].value);
+    } else if ((squares[0][0].value === squares[1][1].value) && (squares[0][0].value === squares[2][2].value) && (squares[0][0].value !== '')) {
       setWinner(squares[0][0].value);
-    } else if ((squares[0][2].value === squares[1][1].value) && (squares[2][0].value === squares[1][1].value) && (squares[0][2].value !== '')){
+    } else if ((squares[0][2].value === squares[1][1].value) && (squares[2][0].value === squares[1][1].value) && (squares[0][2].value !== '')) {
       setWinner(squares[0][2].value);
-    } 
+    }
     return;
   }
 
@@ -95,7 +95,7 @@ const App = () => {
     <div className="App">
       <header className="App-header">
         <h1>React Tic Tac Toe</h1>
-        <h2>{winner === null ? `Current Player ${ PLAYERS[currentPlayer] }` : `Winner is ${ winner }`}</h2>
+        <h2>{winner === null ? `Current Player ${PLAYERS[currentPlayer]}` : `Winner is ${winner}`}</h2>
         <button onClick={resetGame}>Reset Game</button>
       </header>
       <main>
